@@ -9,7 +9,8 @@
   "dependencies": {
     "redis": "~0.8.2",
     "fakeredis": "~0.1.1",
-    "node-uuid": "~1.4.0"
+    "node-uuid": "~1.4.0",
+    "mockery": "~1.4.0"
   },
   "devDependencies": {},
   "scripts": {
