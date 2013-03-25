@@ -1,0 +1,24 @@
+{
+  "name": "redis-jobs",
+  "version": "0.0.0",
+  "description": "redis-jobs ==========",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "redis": "~0.8.2",
+    "fakeredis": "~0.1.1",
+    "node-uuid": "~1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryanpaluch/redis-jobs.git"
+  },
+  "author": "",
+  "license": "BSD"
+}
