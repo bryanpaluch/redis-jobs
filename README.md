@@ -39,6 +39,9 @@ worker.on('job', function(job){
   var res = job.data.foo + 'baz';
   job.reply(res);
 });
+
+worker.listen();
+
 ```
 
 Jobs are put onto a Redis List and popped off the list using BRPOPLPUSH; When a worker uses reply the message is deleted from the 
