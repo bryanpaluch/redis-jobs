@@ -18,7 +18,6 @@ describe('MessageWorker', function(){
   var request;
   it('Worker.on(\'job\', function(job)), job has a reply function and data', function(done){
     worker.once('job', function(req){
-      console.log(req); 
       request = req;
       assert.ok(req.reply);
       assert.ok(req.data);
@@ -35,11 +34,10 @@ describe('MessageWorker', function(){
   it('job reply function sends a publish back to the requester id channel', function(done){
     var client = redis.createClient(); 
     client.on('message', function(channel, message){
-      console.log('fired'); 
       done();
     });
-    client.subscribe( "110ec58a-a0f2-4ac4-8393-c866d813b8d1");
-    console.log('replying');
-    request.reply({foo: 'bar'});
+    client.subscribe( "110ec58a-a0f2-4ac4-8393-c866d813b8d1", function(){
+      request.reply({foo: 'bar'});
+    });               
   });
 });
